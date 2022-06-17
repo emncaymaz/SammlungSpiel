@@ -1,0 +1,13 @@
+{% extends 'game/home.html' %}
+{% block title %} update {% endblock %}
+
+{% block content %}
+<h1>Update</h1>
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input value="update" type="submit">
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'game/home.html' %}
+{% block title %}Detail-Seite {% endblock %}
+
+{% block content %}
+<h1>Detail-Seite</h1>
+<table>
+    <tr>
+        <th>name</th>
+        <th>alt</th>
+        <th>Anletung</th>
+        {% if detail.image %}
+        <th>Image</th>
+        {% endif %}
+        <th>Datum</th>
+    </tr>
+    <tr>
+        <td>{{ detail.name }}</td>
+        <td>{{ detail.age }}</td>
+        <td>{{ detail.instructions }}</td>
+        {% if detail.image %}
+        <td> <img src="{{ detail.image.url }}">  </td>
+        {% endif %}
+        <td>{{ detail.created_date }}</td>
+    </tr>
+</table>
+
+
+{% endblock %}

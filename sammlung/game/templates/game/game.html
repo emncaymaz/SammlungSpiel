@@ -1,0 +1,22 @@
+{% extends 'game/home.html' %}
+{% block title %}Home-Seite {% endblock %}
+<a href="{% url 'game:game' %}">home</a>
+{% block content %}
+
+<h1>Game-Seite</h1>
+
+<a href="{% url 'game:create' %}">create Game</a><br>
+
+        {% for game in games%}
+            @{{ game.user.username}}<br>
+       <h5> <a href="{% url 'game:detail' game.id %}"> {{ game }}</a></h5>
+            <a href="{% url 'game:update' game.id %}">update</a><br>
+            <a href="{% url 'game:delete' game.id %}">delete</a><br><hr>
+        {% endfor%}
+
+
+
+
+
+
+{% endblock %}
